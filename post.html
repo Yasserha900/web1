@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <table>
+        <tr valign="top">
+            <td><img src="{{ post.author.avatar(36) }}"></td>
+            <td>{{ post.author.username }} says:<br>{{ post.body }}</td>
+        </tr>
+    </table>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    <p><small>Posted by {{ post.author.username }} on {{ post.timestamp }}</small></p>
+
+    <hr>
+
+    <h2>Comments</h2>
+    {% for comment in post.comments %}
+        <div class="comment">
+            <p>{{ comment.body }}</p>
+            <p><small>Posted by {{ comment.author.username }} on {{ comment.timestamp }}</small></p>
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Add a comment</h2>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.body.label }}<br>
+            {{ form.body(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

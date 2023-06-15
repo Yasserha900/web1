@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Login
+Flask-WTF
+Flask-Testing
+WTForms
+SQLAlchemy
+email-validator
+flask-sqlalchemy
+mysqlclient
+jinja2
